@@ -9,10 +9,13 @@ const Navbar = () => {
     <nav>
       <main className=" max-w-[1100px] m-auto flex justify-between w-full py-[30px]">
         <div className=" flex items-center w-[15%]">
-          <img src={logo} alt="logo" className=" align-middle w-[100%]" />
+          <img src={logo} alt="logo" className=" align-middle w-[90%]" />
         </div>
-        <div className="flex items-center w-[35%] justify-around">
-          <p>shop</p>
+        <div className="flex items-center w-[35%] justify-around font-Quicksand text-sm">
+          <select>
+            <option>Shop</option>
+            <option>sell</option>
+          </select>
           <p>On sale</p>
           <p>New Arrivals</p>
           <p>Brands</p>
