@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     fontFamily: {
       Teko: ["Teko"],
+      Quicksand: ["Quicksand"],
     },
   },
   plugins: [],
