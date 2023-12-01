@@ -1,9 +1,9 @@
 import React from "react";
-import versace from "../assets/Group (1).png";
-import CK from "../assets/Group (2).png";
-import Gucci from "../assets/gucci-logo-1 1.png";
-import Prada from "../assets/prada-logo-1 1.png";
-import zara from "../assets/zara-logo-1 1.png";
+import versace from "../../assets/Group (1).png";
+import CK from "../../assets/Group (2).png";
+import Gucci from "../../assets/gucci-logo-1 1.png";
+import Prada from "../../assets/prada-logo-1 1.png";
+import zara from "../../assets/zara-logo-1 1.png";
 
 const Brands = () => {
   return (
