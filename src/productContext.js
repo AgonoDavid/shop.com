@@ -19,6 +19,24 @@ export const ProductProvider = ({ children }) => {
     );
   };
 
+  const RemoveItem = (item) => {
+    const isIteminCart = addeditem.find((x) => x.id === item.id);
+
+    if (isIteminCart.quantity === 1) {
+      setAddedItem(addeditem.filter((x) => x.id !== item.id));
+    } else {
+      setAddedItem(
+        addeditem.map((x) =>
+          x.id === item.id ? { ...addeditem, qty: x.quantity - 1 } : x
+        )
+      );
+    }
+  };
+
+  const ClearCart = () => {
+    setAddedItem([]);
+  };
+
   const AddToCart = (item) => {
     const exist = addeditem.find((x) => x.id === item.id);
     if (exist) {
@@ -45,7 +63,15 @@ export const ProductProvider = ({ children }) => {
 
   return (
     <ProductContext.Provider
-      value={{ addeditem, product, AddToCart, fetchData, updateQuantity }}
+      value={{
+        addeditem,
+        product,
+        AddToCart,
+        fetchData,
+        updateQuantity,
+        ClearCart,
+        RemoveItem,
+      }}
     >
       {children}
     </ProductContext.Provider>

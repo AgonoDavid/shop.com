@@ -1,6 +1,6 @@
 import { React, useEffect } from "react";
 import Cart from "../app/cart";
-import { Card, Image, Box, Text, Button } from "@chakra-ui/react";
+import { Card, Image, Box, Text, Button, color } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { useProductContext } from "../productContext";
 const ProductsList = () => {
@@ -61,7 +61,14 @@ function Cards({ info, handleAddtoCart }) {
             {info.title}
           </Text>
         </Box>
-        <Button onClick={handleAddtoCart}>Add to cart</Button>
+        <Button
+          onClick={handleAddtoCart}
+          bg={"#113946"}
+          textColor={"white"}
+          _hover={{ textColor: "White", bg: "#BCA37F" }}
+        >
+          Add to cart
+        </Button>
       </Card>
     </Box>
   );

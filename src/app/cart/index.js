@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { useProductContext } from "../../productContext";
 import Layout from "../../Layout";
 import { Box, Image, Flex, Text, Button } from "@chakra-ui/react";
 const Cart = () => {
-  const { addeditem, updateQuantity } = useProductContext();
+  const { addeditem, updateQuantity, ClearCart, RemoveItem } =
+    useProductContext();
 
   const onIncrease = (itemId) => {
     updateQuantity(itemId, 1);
@@ -27,17 +28,34 @@ const Cart = () => {
                   item={item}
                   onDecrease={onDecrease}
                   onIncrease={onIncrease}
+                  ClearCart={ClearCart}
+                  addeditem={addeditem}
+                  RemoveItem={RemoveItem}
                 />
               ))}
             </Box>
           )}
+          <div>
+            {addeditem.length >= 1 ? (
+              <Button
+                onClick={ClearCart}
+                _hover={{ textColor: "White", bg: "#BCA37F" }}
+                bg={"#113946"}
+                textColor={"white"}
+              >
+                Empty Cart
+              </Button>
+            ) : (
+              <Text textAlign={"center"}>Your Cart is Empty</Text>
+            )}
+          </div>
         </Box>
       </Box>
     </Layout>
   );
 };
 
-const DisplayCart = ({ item, onDecrease, onIncrease }) => {
+const DisplayCart = ({ item, onDecrease, onIncrease, RemoveItem }) => {
   return (
     <Box bg={"white"} w={"100%"} mb={"20px"} rounded={"10px"} p={"15px"}>
       <Flex>
@@ -53,6 +71,7 @@ const DisplayCart = ({ item, onDecrease, onIncrease }) => {
           <Button>{item.qty}</Button>
           <Button onClick={() => onIncrease(item.id)}>+</Button>
         </Box>
+        <Button onClick={RemoveItem}>❌</Button>
       </Flex>
     </Box>
   );

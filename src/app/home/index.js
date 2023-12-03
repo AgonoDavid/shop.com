@@ -1,10 +1,9 @@
 import Layout from "../../Layout";
 import React from "react";
 import heroImage from "../../assets/Group 16.png";
-import { Button, Divider, Flex, Text } from "@chakra-ui/react";
+import { Button, Divider, Text } from "@chakra-ui/react";
 import ProductsList from "../../api";
 import Brands from "../brands";
-import Sort from "../sort";
 
 const Home = () => {
   return (
